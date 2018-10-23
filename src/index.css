@@ -2,9 +2,13 @@
   border: 1px solid red;
 }
 
+body {
+  min-height: 100vh;
+}
+
 .App {
-  height: 100vh;
-  position:relative;
+  min-height: 100vh;
+  position: relative;
 }
 
 footer {
