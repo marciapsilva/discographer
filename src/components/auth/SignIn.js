@@ -9,7 +9,7 @@ const SignIn = ({ show, handleClose }) => {
       </div>
       <div className="modal-content">
         <form className="white">
-          <h5 className="grey-text text-darken-3">Sign In</h5>
+          <h5 className="grey-text text-darken-3">Logar</h5>
           <div className="input-field">
             <label htmlFor="email">Email</label>
             <input type="email" id="email"/>
@@ -19,7 +19,7 @@ const SignIn = ({ show, handleClose }) => {
             <input type="password" id="password"/>
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Login</button>
+            <button className="btn pink lighten-1 z-depth-0">Logar</button>
           </div>
         </form>
       </div>

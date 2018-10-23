@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SignInLinks from './SignInLinks';
 import SignOutLinks from './SignOutLinks';
-import SearchBar from './SearchBar';
 
 const Navbar = () => {
   return (
@@ -11,7 +10,6 @@ const Navbar = () => {
         <Link to="/" className="brand-logo left">discographer</Link>
         <SignInLinks />
         <SignOutLinks />
-        <SearchBar />
       </div>
     </nav>
   )

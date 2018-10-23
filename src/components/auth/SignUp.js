@@ -3,7 +3,7 @@ import React from 'react';
 const SignUp = ({ show, handleClose }) => {
   const modalClass = show ? "modal d-block" : "modal d-none";
   return (
-    <div id="modal-signin" className={modalClass}>
+    <div id="modal-signup" className={modalClass}>
       <div className="modal-header right">
         <a href="#!" onClick={handleClose} className="modal-close waves-effect waves-green btn-flat">x</a>
       </div>

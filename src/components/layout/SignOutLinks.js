@@ -5,27 +5,40 @@ import SignUp from '../auth/SignUp';
 
 class SignOutLinks extends Component {
   state = {
-    show: false
+    signin: { show: false },
+    signup: { show: false }
   }
   showModal = (e) => {
-    this.setState({
-      show: true
-    })
+    e.preventDefault();
+    if (e.target.getAttribute('data-link') === 'signin') {
+      this.setState({
+        ...this.state,
+        signin: { show: true}
+      })
+    } 
+
+    if (e.target.getAttribute('data-link') === 'signup') {
+      this.setState({
+        ...this.state,
+        signup: { show: true}
+      })
+    } 
   }
   hideModal = (e) => {
     this.setState({
-      show: false
+      signin: { show: false},
+      signup: { show: false}
     })
   }
   render() {
     return (
       <div>
         <ul className="right">
-          <li><NavLink to="" onClick={this.showModal} className="btn pink accent-2">sign up</NavLink></li>
-          <li><NavLink to="" onClick={this.showModal}>login</NavLink></li>
+          <li><NavLink to="" data-link="signup" onClick={this.showModal} className="btn pink accent-2">sign up</NavLink></li>
+          <li><NavLink to="" data-link="signin" onClick={this.showModal}>login</NavLink></li>
         </ul>
-        <SignIn show={this.state.show} handleClose={this.hideModal}/>
-        <SignUp show={this.state.show} handleClose={this.hideModal}/>
+        <SignUp show={this.state.signup.show} handleClose={this.hideModal}/>
+        <SignIn show={this.state.signin.show} handleClose={this.hideModal}/>
       </div>
     )
   }
