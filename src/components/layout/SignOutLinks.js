@@ -1,33 +1,31 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import SignIn from '../auth/SignIn';
+import SignUp from '../auth/SignUp';
 
 class SignOutLinks extends Component {
   state = {
     show: false
   }
   showModal = (e) => {
-    e.preventDefault();
     this.setState({
       show: true
     })
-    console.log('abre modal');
   }
   hideModal = (e) => {
-    e.preventDefault();
     this.setState({
       show: false
     })
-    console.log('fecha modal');
   }
   render() {
     return (
       <div>
         <ul className="right">
-          <li><NavLink to="#modal-signin" onClick={this.showModal} className="btn pink accent-2">sign up</NavLink></li>
-          <li><NavLink  to="#modal-signin" onClick={this.showModal}>login</NavLink></li>
+          <li><NavLink to="" onClick={this.showModal} className="btn pink accent-2">sign up</NavLink></li>
+          <li><NavLink to="" onClick={this.showModal}>login</NavLink></li>
         </ul>
-        <SignIn />
+        <SignIn show={this.state.show} handleClose={this.hideModal}/>
+        <SignUp show={this.state.show} handleClose={this.hideModal}/>
       </div>
     )
   }

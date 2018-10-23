@@ -21,4 +21,12 @@ footer {
   padding: 0.25% 0;
   color: #fff;
 }
+
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
   
