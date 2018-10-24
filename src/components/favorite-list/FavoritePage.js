@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import InsideNavbar from '../layout/InsideNavbar';
 import FavoriteArtists from './FavoriteArtists';
 import FavoriteAlbums from './FavoriteAlbums';
 import FavoriteTracks from './FavoriteTracks';
 
-class FavoritePage extends Component {
+class FavoritePage extends Component {  
   render() {
     return (
       <BrowserRouter>
       <div className="container">
         <InsideNavbar page="favorite" artist='Artistas favoritos' albums='Álbums favoritos' tracks='Faixas favoritas'/>
         <Switch>
-          <Route path='/favorite/artists' component={FavoriteArtists} />
-          <Route path='/favorite/albums' component={FavoriteAlbums} />
-          <Route path='/favorite/tracks' component={FavoriteTracks} />
+          <Route path='/favorite/artists' render={routeProps => (<FavoriteArtists {...routeProps} fav_Artists={this.props.data.artists} />)} />
+          <Route path='/favorite/albums' render={routeProps => (<FavoriteArtists {...routeProps} fav_Albums={this.props.data.albums} />)} />
+          <Route path='/favorite/tracks' render={routeProps => (<FavoriteArtists {...routeProps} fav_Tracks={this.props.data.tracks} />)} />
         </Switch>
       </div>
     </BrowserRouter>
@@ -22,4 +23,14 @@ class FavoritePage extends Component {
   }
 }
 
-export default FavoritePage;
+const mapStateToProps = state => {
+  return {
+    data: {
+      artists: state.favoriteData.artists,
+      albums: state.favoriteData.albums,
+      tracks: state.favoriteData.tracks,
+    }
+  }
+}
+
+export default connect(mapStateToProps)(FavoritePage);

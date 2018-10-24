@@ -3,6 +3,8 @@ import ArtistList from '../layout/ArtistList';
 
 class FavoriteArtists extends Component {
   render() {
+    console.log(this.props);
+
     return (
       <div className="container">
         <ArtistList />

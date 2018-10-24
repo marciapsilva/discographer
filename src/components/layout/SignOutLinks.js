@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import SignIn from '../auth/SignIn';
 import SignUp from '../auth/SignUp';
-
 class SignOutLinks extends Component {
   state = {
     signin: { show: false },
