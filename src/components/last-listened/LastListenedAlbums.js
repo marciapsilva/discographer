@@ -5,7 +5,7 @@ class LastListenedAlbums extends Component {
   render() {
     return (
       <div className="container">
-        <AlbumsList />
+        <AlbumsList albums={this.props.last_albums}/>
       </div>
     )
   }

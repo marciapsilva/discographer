@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import TracksList from '../layout/TracksList';
 
 class FavoriteTracks extends Component {
-  render() {
+  render() {  
     return (
       <div className="container">
-        <TracksList />
+        <TracksList tracks={this.props.fav_tracks} />
       </div>
     )
   }

@@ -10,15 +10,15 @@ class FavoritePage extends Component {
   render() {
     return (
       <BrowserRouter>
-      <div className="container">
-        <InsideNavbar page="favorite" artist='Artistas favoritos' albums='Álbums favoritos' tracks='Faixas favoritas'/>
-        <Switch>
-          <Route path='/favorite/artists' render={routeProps => (<FavoriteArtists {...routeProps} fav_Artists={this.props.data.artists} />)} />
-          <Route path='/favorite/albums' render={routeProps => (<FavoriteArtists {...routeProps} fav_Albums={this.props.data.albums} />)} />
-          <Route path='/favorite/tracks' render={routeProps => (<FavoriteArtists {...routeProps} fav_Tracks={this.props.data.tracks} />)} />
-        </Switch>
-      </div>
-    </BrowserRouter>
+        <div className="container">
+          <InsideNavbar page="favorite" artist='Artistas favoritos' albums='Álbums favoritos' tracks='Faixas favoritas'/>
+          <Switch>
+            <Route path='/favorite/artists' render={routeProps => (<FavoriteArtists {...routeProps} fav_artists={this.props.data.artists} />)} />
+            <Route path='/favorite/albums' render={routeProps => (<FavoriteAlbums {...routeProps} fav_albums={this.props.data.albums} />)} />
+            <Route path='/favorite/tracks' render={routeProps => (<FavoriteTracks {...routeProps} fav_tracks={this.props.data.tracks} />)} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     )
   }
 }

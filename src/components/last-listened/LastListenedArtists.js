@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ArtistList from '../layout/ArtistList';
 
-const LastListenedArtist = () => {
-  return (
-    <div className="container">
-      <ArtistList />
-    </div>
-  )
+class LastListenedArtists extends Component {
+  render() {
+    return (
+      <div className="container">
+        <ArtistList artists={this.props.last_artists}/>
+      </div>
+    )
+  }
 }
 
-export default LastListenedArtist;
+export default LastListenedArtists;

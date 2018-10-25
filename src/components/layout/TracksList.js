@@ -1,15 +1,21 @@
 import React from 'react';
 
-const TracksList = () => {
+const TracksList = props => {
+  let trackId = 0;
+
   return (
     <div className="center container">
       <div className="container">
-        <ul>
-          <li>Faixa 1</li>
-          <li>Faixa 2</li>
-          <li>Faixa 3</li>
-          <li>Faixa 4</li>
-        </ul>
+      {props.tracks && props.tracks.map(track => {
+        trackId++;
+        return (
+          <div className="" key={`${track.type}-${track.id}`}>
+            <h4>{trackId}. {track.trackTitle}</h4>
+            <p>Artista: {track.trackArtist}</p>
+            <p>Álbum: {track.trackAlbum}</p>
+          </div>
+        )
+      })}
       </div>
     </div>
   )

@@ -5,7 +5,7 @@ class FavoriteAlbums extends Component {
   render() {
     return (
       <div className="container">
-        <AlbumsList />
+        <AlbumsList albums={this.props.fav_albums}/>
       </div>
     )
   }
