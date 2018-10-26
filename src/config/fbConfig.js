@@ -10,6 +10,8 @@
     storageBucket: "discographerapp.appspot.com",
     messagingSenderId: "107827933634"
   };
+
   firebase.initializeApp(config);
+  firebase.firestore().settings({ timestampsInSnapshots: true });
 
   export default firebase;

@@ -5,7 +5,7 @@ import Home from './components/home/Home';
 import Footer from './components/layout/Footer';
 import LastListenedPage from './components/last-listened/LastListenedPage';
 import FavoritePage from './components/favorite-list/FavoritePage';
-import SearchResult from './components/layout/SearchResult';
+import Search from './components/search/Search';
 
 class App extends Component {
   render() {
@@ -17,7 +17,7 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route path='/recents' component={LastListenedPage} />
             <Route path='/favorite' component={FavoritePage} />
-            <Route path='/search_result' component={SearchResult} />
+            <Route path='/search_result' component={Search} />
           </Switch>
           <Footer />
         </div>

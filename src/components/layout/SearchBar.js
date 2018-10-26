@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 class SearchBar extends Component {
   state = {
@@ -12,12 +13,17 @@ class SearchBar extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
+    console.log(this.state.content);
     this.setState({
       content: '',
       redirect: 'true'
     })
   }
   render() {
+    if (this.state.redirect) {
+      return <Redirect to='/search_result' />
+    }
+
     return (
       <form onSubmit={this.handleSubmit} className="right">
         <div className="input-field">
@@ -26,6 +32,7 @@ class SearchBar extends Component {
           <i className="material-icons">close</i>
         </div>
       </form>
+
     )
   }
 }

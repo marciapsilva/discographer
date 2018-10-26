@@ -5,9 +5,13 @@ import InsideNavbar from '../layout/InsideNavbar';
 import LastListenedArtist from './LastListenedArtists';
 import LastListenedAlbums from './LastListenedAlbums';
 import LastListenedTracks from './LastListenedTracks';
+import { Redirect } from 'react-router-dom';
 
 class LastListenedPage extends Component {
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to='/' />
+
     return (
       <BrowserRouter>
         <div className="container">
@@ -29,7 +33,8 @@ const mapStateToProps = state => {
       artists: state.recentData.artists,
       albums: state.recentData.albums,
       tracks: state.recentData.tracks,
-    }
+    },
+    auth: state.firebase.auth
   }
 }
 

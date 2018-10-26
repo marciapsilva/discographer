@@ -5,9 +5,13 @@ import InsideNavbar from '../layout/InsideNavbar';
 import FavoriteArtists from './FavoriteArtists';
 import FavoriteAlbums from './FavoriteAlbums';
 import FavoriteTracks from './FavoriteTracks';
+import { Redirect } from 'react-router-dom';
 
 class FavoritePage extends Component {  
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to='/' />
+
     return (
       <BrowserRouter>
         <div className="container">
@@ -29,7 +33,8 @@ const mapStateToProps = state => {
       artists: state.favoriteData.artists,
       albums: state.favoriteData.albums,
       tracks: state.favoriteData.tracks,
-    }
+    },
+    auth: state.firebase.auth
   }
 }
 
