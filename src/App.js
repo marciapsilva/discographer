@@ -15,8 +15,8 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/recents' component={LastListenedPage} />
-            <Route path='/favorite' component={FavoritePage} />
+            <Route path='/recents/artists' component={LastListenedPage} />
+            <Route path='/favorite/artists' component={FavoritePage} />
             <Route path='/search_result' component={Search} />
           </Switch>
           <Footer />

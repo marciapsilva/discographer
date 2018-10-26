@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import authReducer from './authReducer';
 import recentDataReducer from './recentDataReducer';
 import favoriteDataReducer from './favoriteDataReducer';
+import searchReducer from './searchReducer';
 import { firestoreReducer } from 'redux-firestore';
 import { firebaseReducer } from 'react-redux-firebase';
 
@@ -10,7 +11,8 @@ const rootReducer = combineReducers({
   recentData: recentDataReducer,
   favoriteData: favoriteDataReducer,
   firestore: firestoreReducer,
-  firebase: firebaseReducer
+  firebase: firebaseReducer,
+  search: searchReducer
 });
 
 export default rootReducer;

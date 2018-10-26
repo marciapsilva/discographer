@@ -9,8 +9,9 @@ import { Redirect } from 'react-router-dom';
 
 class FavoritePage extends Component {  
   render() {
-    const { auth } = this.props;
+    const { auth, search } = this.props;
     if (!auth.uid) return <Redirect to='/' />
+    if (search.length !== 0) return <Redirect to='/search_result' />
 
     return (
       <BrowserRouter>
@@ -34,7 +35,8 @@ const mapStateToProps = state => {
       albums: state.favoriteData.albums,
       tracks: state.favoriteData.tracks,
     },
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    search: state.search.keyword
   }
 }
 
