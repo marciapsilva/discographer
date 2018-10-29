@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import InsideNavbar from '../layout/InsideNavbar';
 import LastListenedArtist from './LastListenedArtists';
 import LastListenedAlbums from './LastListenedAlbums';
 import LastListenedTracks from './LastListenedTracks';
-import { Redirect } from 'react-router-dom';
 
 class LastListenedPage extends Component {
   render() {

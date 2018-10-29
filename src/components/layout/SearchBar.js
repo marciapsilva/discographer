@@ -15,6 +15,10 @@ class SearchBar extends Component {
     e.preventDefault();
     this.props.search(this.state.keyword);
     this.clearInput();
+
+    fetch(`https://api.deezer.com/search/artist/?q="${this.state.keyword}"`)
+    .then(res => res.json())
+    .then(data => console.log(data));
   }
   handleClick = (e) => {
     this.clearInput();
@@ -35,13 +39,13 @@ class SearchBar extends Component {
       </form>
     )
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     // addArtist: artist => dispatch(artistsActions(artist))
     search: keyword => dispatch(searchActions(keyword)),
   }
-}
+};
 
 export default connect(null, mapDispatchToProps)(SearchBar);
