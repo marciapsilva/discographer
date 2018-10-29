@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 
 class Home extends Component {
   render() {
-    const { search } = this.props;
-    if (search.length !== 0) return <Redirect to='/search_result' />
+    if (this.props.search.length !== 0) return <Redirect to='/search_result' />
 
     return (
       <main className="container row">

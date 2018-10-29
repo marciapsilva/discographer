@@ -9,20 +9,37 @@ class Search extends Component {
   state = {
     artist: 'Queen',
     albums: 14,
-    keywords: ''
+    clear_keyword: '',
+    keyword: ''
   }
   componentDidMount = () => {
-    this.props.search(this.state.keyword);
+    this.saveKeywordOnState();
+    this.clearRedirect();
+  }
+  componentDidUpdate = () => {
+    if (this.props.search_keyword.length !== 0) {
+      this.saveKeywordOnState();
+    }
+    this.clearRedirect();
+  }
+  saveKeywordOnState = () => {
+    this.setState({
+      keyword: this.props.search_keyword
+    })
+  }
+  clearRedirect = () => {
+    this.props.search(this.state.clear_keyword);
   }
   addArtist = () => {
     this.props.addArtist(this.state)
   }
   render() {
     const { auth } = this.props;
+    const keyword = this.state.keyword;
     if (!auth.uid) return <Redirect to='/' />
 
     return (
-      <SearchResult keyword={this.props.search} />
+      <SearchResult keyword={keyword} />
     )
   }
 }
@@ -30,7 +47,7 @@ class Search extends Component {
 const mapStateToProps = state => {
   return {
     auth: state.firebase.auth,
-    search: state.search.keyword
+    search_keyword: state.search.keyword
   }
 }
 

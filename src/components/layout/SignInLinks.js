@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import SearchBar from './SearchBar';
 import { signOut } from '../../store/actions/authActions';
 
-const SignInLinks = props => {
+const SignInLinks = props => {  
   return (
     <div>
       <ul className="right">

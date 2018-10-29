@@ -1,6 +1,6 @@
-const initState = { keyword: '' };
+const initState = { keyword: '', redirect: false };
 
-const searchReducer = (state = initState, action) => {  
+const searchReducer = (state = initState, action) => {    
   switch (action.type) {
     case 'SEARCH_KEYWORD': 
       return {

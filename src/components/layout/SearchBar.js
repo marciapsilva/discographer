@@ -2,27 +2,35 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { searchActions } from '../../store/actions/searchActions';
 
-
 class SearchBar extends Component {
   state = {
-    keyword: ''
+    keyword: '',
   }
   handleChange = (e) => {
     this.setState({
-      keyword: e.target.value
+      keyword: e.target.value,
     });
   }
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.search(this.state.keyword);
+    this.clearInput();
+  }
+  handleClick = (e) => {
+    this.clearInput();
+  }
+  clearInput = () => {
+    this.setState({
+      keyword: '',
+    });
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="right">
-        <div className="input-field">
+      <form onSubmit={this.handleSubmit} onClick={this.handleClick} className="right">
+        <div className="input-field" id="search-input">
           <input id="search" type="search" onChange={this.handleChange} value={this.state.keyword} required/>
           <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
-          <i className="material-icons">close</i>
+          <i className="material-icons" onClick={this.handleClick}>close</i>
         </div>
       </form>
     )
@@ -32,7 +40,7 @@ class SearchBar extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     // addArtist: artist => dispatch(artistsActions(artist))
-    search: keyword => dispatch(searchActions(keyword))
+    search: keyword => dispatch(searchActions(keyword)),
   }
 }
 

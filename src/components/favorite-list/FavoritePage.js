@@ -11,7 +11,7 @@ class FavoritePage extends Component {
   render() {
     const { auth, search } = this.props;
     if (!auth.uid) return <Redirect to='/' />
-    if (search.length !== 0) return <Redirect to='/search_result' />
+    if (this.props.search.length !== 0) return <Redirect to='/search_result' />
 
     return (
       <BrowserRouter>
