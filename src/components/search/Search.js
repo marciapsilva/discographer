@@ -35,11 +35,17 @@ class Search extends Component {
   }
   render() {
     const { auth, search_keyword, artist_list } = this.props;
+    console.log(artist_list);
+    console.log(artist_list);
+
+
     if (!auth.uid) return <Redirect to='/' />
 
-    return (
-      <SearchResult keyword={search_keyword} artist_list={artist_list}/>
-    )
+    { this.props.artist_list &&
+      return (
+        <SearchResult artist_list={artist_list} /> 
+      )
+    }
   }
 }
 
@@ -59,5 +65,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
-
 /* <SearchResult onClick={addArtist}/> */

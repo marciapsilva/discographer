@@ -8,6 +8,8 @@ import { Redirect } from 'react-router-dom';
 
 const Navbar = props => {
   const { auth, profile } = props;
+  // console.log(profile);
+
   const links = auth.uid ? (
     <div>
       <SignInLinks profile={profile} />

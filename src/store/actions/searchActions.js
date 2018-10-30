@@ -4,7 +4,7 @@ export const searchKeyword = keyword => {
   }
 }
 
-export const saveArtistResults = list => {
+export const saveArtistResults = list => {  
   return (dispatch, getState) => {
       dispatch({ type: 'SAVE_ARTIST_LIST', list });
   }

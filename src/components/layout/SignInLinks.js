@@ -5,6 +5,8 @@ import SearchBar from './SearchBar';
 import { signOut } from '../../store/actions/authActions';
 
 const SignInLinks = props => {  
+  // console.log(props);
+
   return (
     <div>
       <ul className="right">

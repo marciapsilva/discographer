@@ -12,12 +12,12 @@ class SearchBar extends Component {
       keyword: e.target.value,
     });
   }
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
     this.props.search(this.state.keyword);
     this.clearInput();
     this.clearArtistList();
-    this.getArtistData();
+    await this.getArtistData();
   }
   handleClick = (e) => {
     this.clearInput();
@@ -48,7 +48,9 @@ class SearchBar extends Component {
           });
           this.setState({artistList});
         }
-      });
+      })
+    })
+    .then(() => {
       this.props.save(this.state.artistList);
     });
   }
