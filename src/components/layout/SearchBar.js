@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { searchActions } from '../../store/actions/searchActions';
+import { searchKeyword, saveArtistResults } from '../../store/actions/searchActions';
 
 class SearchBar extends Component {
   state = {
     keyword: '',
+    artistList: [],
   }
   handleChange = (e) => {
     this.setState({
@@ -15,10 +16,8 @@ class SearchBar extends Component {
     e.preventDefault();
     this.props.search(this.state.keyword);
     this.clearInput();
-
-    fetch(`https://api.deezer.com/search/artist/?q="${this.state.keyword}"`)
-    .then(res => res.json())
-    .then(data => console.log(data));
+    this.clearArtistList();
+    this.getArtistData();
   }
   handleClick = (e) => {
     this.clearInput();
@@ -26,6 +25,31 @@ class SearchBar extends Component {
   clearInput = () => {
     this.setState({
       keyword: '',
+    });
+  }
+  clearArtistList = () => {
+    this.setState({
+      artistList: []
+    });
+  }
+  getArtistData = () => {
+    fetch(`https://api.deezer.com/search/artist/?q="${this.state.keyword}"`)
+    .then(res => res.json())
+    .then(data => {      
+      data['data'].map((artist) => {
+        if (artist.radio) {
+          let artistList = [...this.state.artistList];
+          artistList.push({
+            id: artist.id,
+            name: artist.name,
+            type: artist.type,
+            picture: artist.picture_medium,
+            nb_albums: artist.nb_album
+          });
+          this.setState({artistList});
+        }
+      });
+      this.props.save(this.state.artistList);
     });
   }
   render() {
@@ -43,8 +67,8 @@ class SearchBar extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    // addArtist: artist => dispatch(artistsActions(artist))
-    search: keyword => dispatch(searchActions(keyword)),
+    search: keyword => dispatch(searchKeyword(keyword)),
+    save: list => dispatch(saveArtistResults(list)),
   }
 };
 

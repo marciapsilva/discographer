@@ -3,7 +3,7 @@ import { artistsActions } from '../../store/actions/artistsActions';
 import { connect } from 'react-redux';
 import SearchResult from '../layout/SearchResult';
 import { Redirect } from 'react-router-dom';
-import { searchActions } from '../../store/actions/searchActions';
+import { searchKeyword } from '../../store/actions/searchActions';
 
 class Search extends Component {
   state = {
@@ -34,27 +34,27 @@ class Search extends Component {
     this.props.addArtist(this.state)
   }
   render() {
-    const { auth } = this.props;
-    const keyword = this.state.keyword;
+    const { auth, search_keyword, artist_list } = this.props;
     if (!auth.uid) return <Redirect to='/' />
 
     return (
-      <SearchResult keyword={keyword} />
+      <SearchResult keyword={search_keyword} artist_list={artist_list}/>
     )
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state => {  
   return {
     auth: state.firebase.auth,
-    search_keyword: state.search.keyword
+    search_keyword: state.search.keyword,
+    artist_list: state.search.artist_results
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     // addArtist: artist => dispatch(artistsActions(artist))
-    search: keyword => dispatch(searchActions(keyword))
+    search: keyword => dispatch(searchKeyword(keyword))
   }
 }
 
