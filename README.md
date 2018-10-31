@@ -4,7 +4,9 @@ Um app para amantes de música! Adicione seus artistas preferidos, marque albums
 
 Este projeto ainda se encontra **em desenvolvimento**. Caso encontre algum bug ou tenha alguma sugestão de melhoria, deixe um comentário na aba "Issues", que terei o prazer de olhar. ;-)
 
-**Página:** 
+**Atenção: na atual versão, a API do Deezer só funciona com alguma extensão "Allow-Control-Allow-Origin" para browsers. Já estou trabalhando para corrigir esse problema.**
+
+**Página do projeto:** https://discographer.herokuapp.com/ 
 
 ![image](https://user-images.githubusercontent.com/40531512/47817398-432f2080-dd34-11e8-8fea-454b712f7df3.png)
 
@@ -27,7 +29,7 @@ Este projeto ainda se encontra **em desenvolvimento**. Caso encontre algum bug o
 
 ![image](https://user-images.githubusercontent.com/40531512/47819350-ff8ae580-dd38-11e8-8672-c38f33b5189a.png)
 
-**Navegável:** https://marvelapp.com/a30d1b7
+**Protótipo navegável:** https://marvelapp.com/a30d1b7
 
 ### Distribuição dos componentes
 
