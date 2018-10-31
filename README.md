@@ -2,9 +2,9 @@
 
 Um app para amantes de música! Adicione seus artistas preferidos, marque albums ouvidos, escolha músicas favoritas etc. Trabalho final do bootcamp da Laboratória. Requisitos: usar React + Redux.
 
-Este projeto ainda se encontra **em desenvolvimento**. Caso encontre algum bug ou tenha alguma sugestão de melhoria, deixe um comentário na aba "Issues", que terei o prazer de olhar. ;-)
+Este projeto ainda se encontra **em desenvolvimento**. Caso encontre algum bug ou tenha alguma sugestão de melhoria, deixe um comentário na aba "Issues", que terei o prazer de olhar. :wink:
 
-**Atenção: na atual versão, a API do Deezer só funciona com alguma extensão do tipo "Allow-Control-Allow-Origin" para browsers ligada. Já estou trabalhando para corrigir esse problema.**
+**:heavy_exclamation_mark: Atenção: na atual versão, a API do Deezer só funciona com alguma extensão do tipo "Allow-Control-Allow-Origin" para browsers ligada. Já estou trabalhando para corrigir esse problema.**
 
 **Página do projeto:** https://discographer.herokuapp.com/ 
 
@@ -41,14 +41,14 @@ Este projeto ainda se encontra **em desenvolvimento**. Caso encontre algum bug o
 
 Primeira versão do projeto entregue em 31/10/2018. Nesta versão estão disponíveis as seguintes funcionalidades:
 
-- Cadastro e login de usuário :heavy_check_mark:
-- Busca de artistas no banco de dados do Deezer :heavy_check_mark: 
-- Possibilidade de adicionar o artista à página de artistas recentemente ouvidos :heavy_check_mark: 
+- Cadastro e login de usuário; :heavy_check_mark:
+- Busca de artistas no banco de dados do Deezer; :heavy_check_mark: 
+- Possibilidade de adicionar o artista à página de artistas recentemente ouvidos. :heavy_check_mark: 
 
 **Problemas conhecidos:**
 
-- Problema de cross-origin com a API do Deezer, no momento a API só funciona com uma extensão para os navegadores que permita cross-origin;
-- Layout não adaptado a todos os navegadores e não-responsivo.
+- Problema de cross-origin com a API do Deezer, no momento a API só funciona com uma extensão para os navegadores que permita cross-origin; :heavy_exclamation_mark:
+- Layout não adaptado a todos os navegadores e não-responsivo. :heavy_exclamation_mark:
 
 ### Versão 0.1.0 - Beta - TBA
 
