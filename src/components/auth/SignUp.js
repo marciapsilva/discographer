@@ -26,7 +26,7 @@ class SignUp extends Component {
     return (
       <div id="modal-signup" className={modalClass}>
         <div className="modal-header right">
-          <a href="#!" onClick={this.props.handleClose} className="modal-close waves-effect waves-green btn-flat">x</a>
+          <a href onClick={this.props.handleClose} className="modal-close waves-effect waves-green btn-flat">x</a>
         </div>
         <div className="modal-content">
           <form className="white">

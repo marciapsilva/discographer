@@ -5,8 +5,6 @@ import SearchBar from './SearchBar';
 import { signOut } from '../../store/actions/authActions';
 
 const SignInLinks = props => {  
-  // console.log(props);
-
   return (
     <div>
       <ul className="right">
@@ -15,7 +13,7 @@ const SignInLinks = props => {
         <li><NavLink to="/recents/artists" className="btn btn-floating pink lighten-1">
           {props.profile.initials}
         </NavLink></li>
-        <li><a onClick={props.signOut}>sair</a></li>
+        <li><a href onClick={props.signOut}>sair</a></li>
       </ul>
       <SearchBar />
     </div>

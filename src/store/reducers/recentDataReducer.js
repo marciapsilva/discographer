@@ -13,6 +13,8 @@ const initState = {
   ]
 }
 const recentDataReducer = (state = initState, action) => {
+  // console.log(action);
+
   switch (action.type) {
     case 'ADD_ARTIST': 
       console.log('artista adicionado', action.artist);

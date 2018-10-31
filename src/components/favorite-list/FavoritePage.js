@@ -9,7 +9,7 @@ import { Redirect } from 'react-router-dom';
 
 class FavoritePage extends Component {  
   render() {
-    const { auth, search } = this.props;
+    const { auth } = this.props;
     if (!auth.uid) return <Redirect to='/' />
     if (this.props.search.length !== 0) return <Redirect to='/search_result' />
 

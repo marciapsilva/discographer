@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { artistsActions } from '../../store/actions/artistsActions';
 import { connect } from 'react-redux';
 import SearchResult from '../layout/SearchResult';
 import { Redirect } from 'react-router-dom';
@@ -7,16 +6,15 @@ import { searchKeyword } from '../../store/actions/searchActions';
 
 class Search extends Component {
   state = {
-    artist: 'Queen',
-    albums: 14,
+    keyword: '',
     clear_keyword: '',
-    keyword: ''
+    artist_list: ''
   }
   componentDidMount = () => {
     this.saveKeywordOnState();
     this.clearRedirect();
   }
-  componentDidUpdate = () => {
+  componentDidUpdate = async () => {
     if (this.props.search_keyword.length !== 0) {
       this.saveKeywordOnState();
     }
@@ -30,26 +28,22 @@ class Search extends Component {
   clearRedirect = () => {
     this.props.search(this.state.clear_keyword);
   }
-  addArtist = () => {
-    this.props.addArtist(this.state)
+  redirectUser = () => {
+    this.props.history.push('/recents/artists');
   }
   render() {
-    const { auth, search_keyword, artist_list } = this.props;
-    console.log(artist_list);
-    console.log(artist_list);
-
-
+    const { auth, artist_list } = this.props;
     if (!auth.uid) return <Redirect to='/' />
 
-    { this.props.artist_list &&
-      return (
-        <SearchResult artist_list={artist_list} /> 
-      )
-    }
+    return (
+      <div>
+        { artist_list && <SearchResult keyword={this.state.keyword} artist_list={artist_list} redirect={() => this.redirectUser()} /> }
+      </div>
+    )
   }
 }
 
-const mapStateToProps = state => {  
+const mapStateToProps = state => {
   return {
     auth: state.firebase.auth,
     search_keyword: state.search.keyword,
@@ -59,10 +53,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    // addArtist: artist => dispatch(artistsActions(artist))
     search: keyword => dispatch(searchKeyword(keyword))
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
-/* <SearchResult onClick={addArtist}/> */

@@ -36,7 +36,7 @@ class SearchBar extends Component {
     fetch(`https://api.deezer.com/search/artist/?q="${this.state.keyword}"`)
     .then(res => res.json())
     .then(data => {      
-      data['data'].map((artist) => {
+      data['data'].map(artist => {
         if (artist.radio) {
           let artistList = [...this.state.artistList];
           artistList.push({
