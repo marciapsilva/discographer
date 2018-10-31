@@ -85,9 +85,17 @@ Para a versão 0.4.0, desejo desenvolver a seguinte funcionalidade:
 
 - Implementar uma barra embaixo de cada artista/album seguido/favoritado por um usuário que indique a porcentagem dos álbums/tracks que aquele usuário ouviu daquele determinado artista.
 
-### Versão 1.0.0 - MVP - TBA
+### Versão 0.5.0 - MVP - TBA
 
-Para a versão 1.0.0, desejo desenvolver a seguinte funcionalidade:
+Para a versão 0.5.0, desejo desenvolver as seguintes funcionalidades:
 
 - Possibilidade de fazer pesquisa pelo nome do álbum;
 - Possibilidade de fazer pesquisa pelo nome da música.
+
+
+### Versão 1.0.0 - MVP - TBA
+
+Para a versão 1.0.0, desejo desenvolver as seguintes melhorias:
+
+- Design adaptado a todos os browsers;
+- Design responsivo.
