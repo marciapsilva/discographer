@@ -41,9 +41,9 @@ Este projeto ainda se encontra **em desenvolvimento**. Caso encontre algum bug o
 
 Primeira versão do projeto entregue em 31/10/2018. Nesta versão estão disponíveis as seguintes funcionalidades:
 
-:heavy_check_mark: - Cadastro e login de usuário;
-:heavy_check_mark: - Busca de artistas no banco de dados do Deezer;
-:heavy_check_mark: - Possibilidade de adicionar o artista à página de artistas recentemente ouvidos.
+- Cadastro e login de usuário :heavy_check_mark:
+- Busca de artistas no banco de dados do Deezer :heavy_check_mark: 
+- Possibilidade de adicionar o artista à página de artistas recentemente ouvidos :heavy_check_mark: 
 
 **Problemas conhecidos:**
 
