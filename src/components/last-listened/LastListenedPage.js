@@ -10,7 +10,8 @@ import LastListenedTracks from './LastListenedTracks';
 
 class LastListenedPage extends Component {
   state = {
-    artists: ''
+    artists: '',
+    update: false
   }
   componentDidMount = async () => {
     this.props.data.artists && await this.filterArtists();
@@ -22,10 +23,57 @@ class LastListenedPage extends Component {
     const filterByUser = this.props.data.artists.filter(artist => {
       return artist.authorId === this.props.auth.uid && artist.type === 'artist';
     })
+
     if (this.state.artists.length === 0) {
-      await this.setState({
-        artists: filterByUser
-      })
+      if (filterByUser.length === 0) {
+        this.setState({
+          artists: 'não há artistas'
+        })
+      }
+  
+      if (filterByUser.length !== 0) {
+        await this.setState({
+          artists: filterByUser
+        })
+      } 
+    } else {
+      if (this.state.artists !== 'não há artistas') {
+        let artistIdArray = [];
+        let dataArtistIdArray = [];
+
+        this.state.artists.map(artist => {
+          artistIdArray.push(artist.id)
+        })
+        filterByUser.map(dataArtist => {
+          dataArtistIdArray.push(dataArtist.id)
+        })
+
+        artistIdArray.sort();
+        dataArtistIdArray.sort();
+        
+        for (let i = 0; i < artistIdArray.length; i++) {
+          if (artistIdArray[i] !== dataArtistIdArray[i]) {
+            this.setState({
+              update: true
+            })
+            i = artistIdArray.length - 1;
+          } 
+          i++;
+        }
+
+        if (this.state.update) {
+          this.setState({
+            artists: filterByUser,
+            update: false
+          })
+        }
+      } 
+
+      if (this.state.artists === 'não há artistas' && filterByUser.length !== 0) {
+        this.setState({
+          artists: filterByUser
+        })
+      }
     }
   }
   render() {
