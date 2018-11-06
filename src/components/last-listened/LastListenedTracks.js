@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import TracksList from '../layout/TracksList';
+// import TracksList from '../layout/TracksList';
 
 class LastListenedTracks extends Component {
   render() {
     return (
       <div className="container">
-        <TracksList tracks={this.props.last_tracks}/>
+        <p className="center">Página com as últimas faixas ouvidas em desenvolvimento.</p>
+        {/* <TracksList tracks={this.props.last_tracks}/> */}
       </div>
     )
   }

@@ -8,9 +8,9 @@ export const addArtist = artist => {
       authorId: authorId,
       createdAt: new Date()
     }).then(() => {
-      dispatch({ action: 'ADD_ARTIST', artist });
+      dispatch({ type: 'ADD_ARTIST', artist });
     }).catch(err => {
-      dispatch({ action: 'ADD_ARTIST_ERROR', err })
+      dispatch({ type: 'ADD_ARTIST_ERROR', err })
     })
   }
 }

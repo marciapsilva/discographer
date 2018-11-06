@@ -83,7 +83,7 @@ class LastListenedPage extends Component {
  
     return (
       <BrowserRouter>
-        <div className="container">
+        <div className="container row">
           <InsideNavbar page="recents" artist='Últimos artistas' albums='Últimos álbums' tracks='Últimas faixas'/>
           <Switch>
             {this.state.artists.length && 

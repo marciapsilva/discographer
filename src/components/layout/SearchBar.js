@@ -33,7 +33,10 @@ class SearchBar extends Component {
     });
   }
   getArtistData = () => {
-    fetch(`https://api.deezer.com/search/artist/?q="${this.state.keyword}"`)
+    const proxyUrl = 'https://secret-sea-18422.herokuapp.com/';
+    const targetUrl = `https://api.deezer.com/search/artist/?q="${this.state.keyword}"`;
+
+    fetch(proxyUrl + targetUrl)
     .then(res => res.json())
     .then(data => {      
       data['data'].map(artist => {
@@ -56,7 +59,7 @@ class SearchBar extends Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit} onClick={this.handleClick} className="right">
+      <form onSubmit={this.handleSubmit} onClick={this.handleClick} className="right searchbar">
         <div className="input-field" id="search-input">
           <input id="search" type="search" onChange={this.handleChange} value={this.state.keyword} required/>
           <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>

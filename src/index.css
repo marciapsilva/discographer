@@ -1,9 +1,17 @@
-.border-test {
-  border: 1px solid red;
-}
-
 body {
   min-height: 100vh;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+.searchbar {
+  height: 60px;
 }
 
 .App {
@@ -20,12 +28,4 @@ footer {
 .copyright {
   padding: 0.25% 0;
   color: #fff;
-}
-
-.d-block {
-  display: block;
-}
-
-.d-none {
-  display: none;
 }
