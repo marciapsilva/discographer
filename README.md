@@ -4,8 +4,6 @@ Um app para amantes de música! Adicione seus artistas preferidos, marque albums
 
 Este projeto ainda se encontra **em desenvolvimento**. Caso encontre algum bug ou tenha alguma sugestão de melhoria, deixe um comentário na aba "Issues", que terei o prazer de olhar. :wink:
 
-**:heavy_exclamation_mark: Atenção: na atual versão, a API do Deezer só funciona com alguma extensão do tipo "Allow-Control-Allow-Origin" para browsers ligada. Já estou trabalhando para corrigir esse problema.**
-
 **Página do projeto:** https://discographer.herokuapp.com/ 
 
 ![image](https://user-images.githubusercontent.com/40531512/47817398-432f2080-dd34-11e8-8fea-454b712f7df3.png)
@@ -45,16 +43,11 @@ Primeira versão do projeto entregue em 31/10/2018. Nesta versão estão dispon�
 - Busca de artistas no banco de dados do Deezer; :heavy_check_mark: 
 - Possibilidade de adicionar o artista à página de artistas recentemente ouvidos. :heavy_check_mark: 
 
-**Problemas conhecidos:**
-
-- Problema de cross-origin com a API do Deezer, no momento a API só funciona com uma extensão para os navegadores que permita cross-origin; :heavy_exclamation_mark:
-- Layout não adaptado a todos os navegadores e não-responsivo. :heavy_exclamation_mark:
-
 ### Versão 0.1.0 - Beta - TBA
 
 Para a versão 0.1.0, desejo desenvolver as seguintes funcionalidades:
 
-- Resolver o problema de cross-origin;
+- Resolver um bug que faz com que às vezes o artista recém-adicionado não apareça na página de recém-ouvidos;
 - Exibir os artistas seguidos pelo usuário de forma cronológica, do adicionado mais recentemente ao mais antigo;
 - Implementar o botão de unfollow nos artigas que já são seguidos pelo usuário;
 - Implementar o botão de favoritar / desfavoritar artista;
