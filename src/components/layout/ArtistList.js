@@ -7,7 +7,8 @@ const ArtistList = props => {
       {
         props.artists === 'não há artistas' ? (
           <div>
-            <p>{props.artists}</p>
+            <p>Você ainda não adicionou nenhum artista.</p>
+            <p>Pesquise o artista pelo nome no campo de busca acima para iniciar sua coleção.</p>
           </div>
         ) : (
           props.artists && props.artists.map(artist => {
